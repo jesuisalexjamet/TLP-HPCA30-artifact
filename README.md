@@ -44,6 +44,7 @@ effectively combines predicting whether an access will be off-chip
 with adaptive prefetch filtering at the first-level data cache (L1D).
 
 TLP has been accepted at the [2024 IEEE International Symposium on High-Performance Computer Architecture](https://hpca-conf.org/2024/).
+
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
 
