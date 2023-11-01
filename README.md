@@ -3,10 +3,14 @@
 </p>
 
 <p align="center">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/itisntalex/TLP-HPCA30-artifact">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/itisntalex/TLP-HPCA30-artifact" />
+<a href="https://github.com/itisntalex/TLP-HPCA30-artifact/releases">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/itisntalex/TLP-HPCA30-artifact"></a>
     <a href="https://github.com/itisntalex/TLP-HPCA30-artifact/blob/main/LICENSE">
-        <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg">
+        <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
     </a>
+    <a href="https://twitter.com/intent/follow?screen_name=jesuisalexjamet">
+    <img src="https://img.shields.io/twitter/follow/jesuisalexjamet" alt="Twitter Follow" /></a>
 </p>
 
 <details open="open">
@@ -44,6 +48,6 @@ TLP has been accepted at the [2024 IEEE International Symposium on High-Performa
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
-Alexandre Valentin Jamet - alexandrev.jamet@gmail.com
+Alexandre Valentin Jamet - alexandre.jamet@bsc.es / alexandrev.jamet@gmail.com
 
 <!-- ## Acknowledgments -->
