@@ -1,4 +1,8 @@
 <p align="center">
+  <h3 align="center">A Two Level Neural Approach Combining Off-Chip Prediction with Adaptive Prefetch Filtering</h3>
+</p>
+
+<p align="center">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/itisntalex/TLP-HPCA30-artifact">
     <a href="https://github.com/itisntalex/TLP-HPCA30-artifact/blob/main/LICENSE">
         <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg">
