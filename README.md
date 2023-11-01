@@ -43,6 +43,12 @@
 effectively combines predicting whether an access will be off-chip
 with adaptive prefetch filtering at the first-level data cache (L1D).
 
+The key idea behind TLP is to: 
+ 1. Accurately predict which load requests might go to off-chip;
+ 2. Accurately predict which L1D prefetch request might go off-chip;
+ 3. Speculatively start fetching the data required by the predicted off-chip loads directly from the main memory, when confidence is high enough, in parallel to the cache accesses. Conversely, when confidence is not high enough, the speculative fetch from main memory is delayed upon an L1D miss.
+ 4. Discard L1D prefetch request that are predicted to go off-chip.
+
 TLP has been accepted at the [2024 IEEE International Symposium on High-Performance Computer Architecture](https://hpca-conf.org/2024/).
 
 ## License
