@@ -1,0 +1,29 @@
+{
+  "name": "L1D",
+  "latency": 5,
+  "cache_type": "l1d",
+  "fill_level": "fill_l1",
+  "max_reads": 2,
+  "max_writes": 2,
+  "write_queue": {
+    "size": 64
+  },
+  "read_queue": {
+    "size": 64
+  },
+  "prefetch_queue": {
+    "size": 16
+  },
+  "mshr": {
+    "size": 10
+  },
+  "processed_queue": {
+    "size": 512
+  },
+  "set_degree": 64,
+  "associativity_degree": 12,
+  "sectoring_degree": 8,
+  "block_size": 8,
+  "prefetcher": "l1d_next_line",
+  "replacement_policy": "l1d_lru"
+}

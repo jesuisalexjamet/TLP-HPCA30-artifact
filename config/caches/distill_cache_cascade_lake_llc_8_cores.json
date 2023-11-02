@@ -1,0 +1,38 @@
+{
+  "name": "LLC",
+  "latency": 56,
+  "cache_type": "llc",
+  "fill_level": "fill_llc",
+  "max_reads": 4,
+  "max_writes": 1,
+  "write_queue": {
+    "size": 128
+  },
+  "read_queue": {
+    "size": 128
+  },
+  "prefetch_queue": {
+    "size": 128
+  },
+  "mshr": {
+    "size": 256
+  },
+  "processed_queue": {
+    "size": 224
+  },
+  "sampler": {
+      "sets": 256,
+      "ways": 12,
+      "prediction_table": {
+          "size": 16384
+      }
+  },
+  "set_degree": 16384,
+  "atd_set_degree": 32,
+  "loc_associativity": 8,
+  "woc_associativity": 3,
+  "block_size": 64,
+  "word_size": 4,
+  "prefetcher": "llc_no",
+  "replacement_policy": "llc_lru"
+}

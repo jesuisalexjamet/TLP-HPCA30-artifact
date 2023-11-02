@@ -1,0 +1,34 @@
+{
+  "name": "SDC",
+  "latency": 1,
+  "cache_type": "sdc",
+  "fill_level": "fill_sdc",
+  "max_reads": 16,
+  "max_writes": 16,
+  "write_queue": {
+    "size": 64
+  },
+  "read_queue": {
+    "size": 64
+  },
+  "prefetch_queue": {
+    "size": 32
+  },
+  "mshr": {
+    "size": 64
+  },
+  "processed_queue": {
+    "size": 224
+  },
+  "set_degree": 512,
+  "associativity_degree": 2,
+  "sectoring_degree": 1,
+  "block_size": 8,
+  "prefetcher": "sdc_next_line",
+  "replacement_policy": "sdc_lru",
+  "routing_engine": {
+      "sniffing_periodicity": 64,
+      "histories_length": 512,
+      "flush_periods": 6
+  }
+}

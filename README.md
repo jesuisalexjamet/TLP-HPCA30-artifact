@@ -17,11 +17,11 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#what-is-tlp">What is TLP?</a></li>
-    <!-- <li><a href="#about-the-framework">About the Framework</a></li>
+    <!-- <li><a href="#about-the-framework">About the Framework</a></li> -->
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#preparing-traces">Preparing Traces</a></li>
-    <li><a href="#experimental-workflow">Experimental Workflow</a></li>
+    <!-- <li><a href="#experimental-workflow">Experimental Workflow</a></li>
       <ul>
         <li><a href="#launching-experiments">Launching Experiments</a></li>
         <li><a href="#rolling-up-statistics">Rolling up Statistics</a></li>
@@ -50,6 +50,43 @@ The key idea behind TLP is to:
  4. Discard L1D prefetch request that are predicted to go off-chip.
 
 TLP has been accepted at the [2024 IEEE International Symposium on High-Performance Computer Architecture](https://hpca-conf.org/2024/).
+
+## Prerequisites
+
+The infrastructure has been tested with the following system configuration:
+
+1. CMake 3.16.3
+2. GCC 9.4.0
+3. Boost 1.71.0
+
+## Instalation
+
+1. To clone the GitHub repository use on the following command in your favorite bash interpreter.
+
+  ```bash
+  git clone git@github.com:itisntalex/TLP-HPCA30-artifact.git
+  git clone https://github.com/itisntalex/TLP-HPCA30-artifact.git
+  ```
+
+2. Build the simulation infrastructure using CMake. A collection of variable can be provided to customize the build.
+
+```bash
+cd build
+cmake -G "Unix Makefiles" ../ -DSIMULATOR_OUTPUT_DIRECTORY="1_core_cascade_lake" -DCHAMPSIM_CPU_NUMBER_CORE=1 -DCHAMPSIM_CPU_DRAM_IO_FREQUENCY=800 -DLEGACY_TRACE=ON -DENABLE_FSP=OFF -DENABLE_DELAYED_FSP=OFF -DENABLE_BIMODAL_FSP=OFF -DENABLE_SSP=OFF
+make -j
+```
+
+The CMake buildsystem for our infrasture accepts a handful of parameters that allow to customize the build:
+- `SIMULATOR_OUTPUT_DIRECTORY`: Specifies the directory in which the simulator will be compiled `bin/${SIMULATOR_OUTPUT_DIRECTORY}`.
+- `CHAMPSIM_CPU_NUMBER_CORE`: Specifies the number of cores that will be simulated.
+- `CHAMPSIM_CPU_DRAM_IO_FREQUENCY`: Specifies the I/O frequency of modeled DRAM.
+- `LEGACY_TRACE`: Specifies whether or not to use the legacy ChampSim trace format.
+- `ENABLE_FSP`: Specifies wheter or not to use the FSP predictor (equivalent to Hermes).
+- `ENABLE_DELAYED_FSP`: Specifies whether or not to use the Delayed FSP predictor.
+- `ENABLE_BIMODAL_FSP`: Specifies whether or not to use the Bimoal FSP predictor.
+- `ENABLE_SSP`: Specifies whether or not to use the SSP predictor.
+
+## Preparing Traces
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.

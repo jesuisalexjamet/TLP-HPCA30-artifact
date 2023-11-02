@@ -546,7 +546,9 @@ void cc::sectored_cache::_fill_cache(const uint32_t& set, const uint16_t& way,
             !this->_blocks[set][this->_sectoring_degree * way + i].used) {
             this->_pf_useless++;
 
-            this->_pf_useless_per_loc[this->_blocks[set][this->_sectoring_degree * way + i].served_from]++;
+            this->_pf_useless_per_loc
+                [this->_blocks[set][this->_sectoring_degree * way + i]
+                     .served_from]++;
         }
 
         this->_blocks[set][this->_sectoring_degree * way + i].prefetch =
@@ -1922,25 +1924,9 @@ void cc::sectored_cache::_handle_prefetch() {
                     // if (curr_packet.pf_origin_level == cc::cache::fill_l1)
                     //     assert(!curr_packet.pf_went_offchip_pred);
 #endif  // NDEBUG
-                    // WIP: Upon a prefetch LLC miss, we block prefetch requests from going
-                    // down to the DRAM.
-                    if (!this->check_type(cc::is_llc)) {
-                        continue_prefetch =
-                            curr_cpu->fill_path_policy->propagate_miss(this,
-                                                                    curr_packet);
-                    } else { // If this is the LLC, we need to back to the previous levels and eliminate that prefetch request.
-                        const PACKET &curr_packet_cpy = curr_packet;
-
-                        curr_cpu->l2c->prefetch_queue()->remove_queue(&curr_packet);
-                        curr_cpu->l1d->prefetch_queue()->remove_queue(&curr_packet);
-
-                        std::remove_if(curr_cpu->l2c->mshr().begin(), curr_cpu->l2c->mshr().end(), [curr_packet] (const PACKET& e) {
-                            return e.address == curr_packet.address && e.type == cc::cache::prefetch;
-                        });
-                        std::remove_if(curr_cpu->l1d->mshr().begin(), curr_cpu->l1d->mshr().end(), [curr_packet] (const PACKET& e) {
-                            return e.address == curr_packet.address && e.type == cc::cache::prefetch;
-                        });
-                    }
+                    continue_prefetch =
+                        curr_cpu->fill_path_policy->propagate_miss(this,
+                                                                   curr_packet);
                 }
 
                 // Generate subsequent prefetches on prefetch misses originating

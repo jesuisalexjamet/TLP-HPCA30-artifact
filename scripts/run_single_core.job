@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+#SBATCH --qos=big
+#SBATCH --mem=8G
+
+SLURM_USERNAME="ajamet"
+
+# Setting a couple of variable to set the environment.
+GPFS_DIR="/scratch/nas/3/${SLURM_USERNAME}" # Where is the AE directory stored?
+WORKING_DIR="${GPFS_DIR}/TLP-HPCA30-artifact"
+
+TRACE_DIR="${GPFS_DIR}/traces/"
+OUTPUT_DIR="${WORKING_DIR}/results/single_core" # Provide an output directory.
+
+CONFIG=$1
+BINARY=$2
+TRACE=$3
+
+${WORKING_DIR}/bin/${BINARY}/champsim_simulator --config=${CONFIG} --warmup_instructions=100000000 --simulation_instructions=100000000 --traces=${TRACE_DIR}/$TRACE

@@ -1,0 +1,4 @@
+{
+	"name": "llc_lru",
+	"cache_type": "llc"
+}

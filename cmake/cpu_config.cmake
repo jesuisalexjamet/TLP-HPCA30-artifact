@@ -10,6 +10,8 @@ set(ENABLE_SSP OFF CACHE BOOL "Is teh SSP component enabled?")
 
 set(LEGACY_TRACE OFF CACHE BOOL "Enable legacy trace format.")
 
+set(SIMULATOR_OUTPUT_DIRECTORY OFF CACHE BOOL "Directory where to compile the simulator.")
+
 # Processing a bunch of sanity checks on the different variables.
 if (NOT ${CHAMPSIM_CPU_NUMBER_CORE} GREATER 0)
   message (FATAL_ERROR "The number of CPU cores provided is not valid.")
