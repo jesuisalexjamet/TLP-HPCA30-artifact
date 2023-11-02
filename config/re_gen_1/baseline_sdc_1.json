@@ -1,1 +1,0 @@
-{"llc": {"config": "config/caches/sectored_cache_cascade_lake_llc.json"}, "cores": [{"l1i": {"config": "config/caches/sectored_cache_l1i.json"}, "l1d": {"config": "config/caches/sectored_cache_l1d.json"}, "l2c": {"config": "config/caches/sectored_cache_cascade_lake_l2c.json"}, "sdc": {"config": "config/caches/re_gen_1/sectored_cache_sdc_1.json", "enabled": true}}]}
