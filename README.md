@@ -58,6 +58,9 @@ The infrastructure has been tested with the following system configuration:
 1. CMake 3.16.3
 2. GCC 9.4.0
 3. Boost 1.71.0
+4. VSCode 1.84
+5. VSCode Jupyter Extension v2023.10
+6. Python 3.9.10
 
 ## Instalation
 
