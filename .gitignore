@@ -86,3 +86,6 @@ ipython_config.py
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/cmake,visualstudiocode,c++,jupyternotebooks
+
+# Igoring plots
+plots/*
