@@ -8,7 +8,7 @@ GPFS_DIR="/scratch/nas/3/${SLURM_USERNAME}" # Where is the AE directory stored?
 WORKING_DIR="${GPFS_DIR}/TLP-HPCA30-artifact"
 
 TRACE_DIR="${GPFS_DIR}/traces/"
-OUTPUT_DIR="${WORKING_DIR}/results/single_core" # Provide an output directory.
+OUTPUT_DIR="${WORKING_DIR}/results/single_core/100M/100M" # Provide an output directory.
 
 # Defining a useful functions that will allow us to know how many jobs are already in the queues.
 jobs_in_queue() {
@@ -67,7 +67,7 @@ CONFIGS=(
 	"baseline_cascade_lake_ipcp_hermes_o" 
 	"baseline_cascade_lake_ipcp_spp_ppf_hermes_o"
 	"baseline_cascade_lake_ipcp_hermes_o_double"   
-	"baseline_cascade_lake_ipcp_spp_ppf_tlp_layered_core_l1d_f20_-25"
+	"baseline_cascade_lake_ipcp_tlp_layered_core_l1d_f20_-25"
 	"baseline_cascade_lake_ipcp_iso_prefetcher"
 	
 	"baseline_cascade_lake_berti"

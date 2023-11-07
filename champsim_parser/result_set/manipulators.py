@@ -265,13 +265,7 @@ def normalize_llc_distill_cache(results_set, ref_served_from=None):
             v['llc_prefetcher']['pf_fill']
         
         v['l1d_prefetcher']['coverage'] = 1.0 if v['l1d_misses'] == 0.0 else v['l1d_prefetcher']['pf_useful'] / v['l1d_misses']
-        v['l2c_prefetcher']['coverage'] = 0.0 if v['l2c_misses'] == 0.0 else v['l2c_prefetcher']['pf_useful'] / v['l2c_misses']
-
-        # Adjusting the misses metrics for the calculation of coverage.
-        # v['l1d_prefetcher']['misses'] = 0.0 if v['l1d_misses'] < v['l1d_prefetcher']['pf_useful'] else v['l1d_misses'] - v['l1d_prefetcher']['pf_useful']
-        v['l1d_prefetcher']['misses'] = v['llc_misses']
-        v['l2c_prefetcher']['misses'] = v['l2c_misses'] - v['l2c_prefetcher']['pf_useful']
-
+        v['l2c_prefetcher']['coverage'] = 1.0 if v['l2c_misses'] == 0.0 else v['l2c_prefetcher']['pf_useful'] / v['l2c_misses']
 
     normalize_llc_misses(results_set)
 
@@ -403,7 +397,6 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
     sp_l1d_pref_issued, sp_l2c_pref_issued, sp_llc_pref_issued = {}, {}, {}
     sp_l1d_pref_acc, sp_l2c_pref_acc, sp_llc_pref_acc = {}, {}, {}
     sp_l1d_pref_cov, sp_l2c_pref_cov = {}, {}
-    sp_l1d_pref_misses, sp_l2c_pref_misses = {}, {}
     sp_l1d_useful_pref_loc_l2c, sp_l1d_useful_pref_loc_llc, sp_l1d_useful_pref_loc_dram = {}, {}, {}
     sp_l1d_useless_pref_loc_l2c, sp_l1d_useless_pref_loc_llc, sp_l1d_useless_pref_loc_dram = {}, {}, {}
 
@@ -619,20 +612,20 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
                 sp_irreg_pred_change_rate[tokens[0]] = result_set[k]['irregular_predictor']['change_rate'] * \
                     simpoints_data[tokens[0]][trace_id]
 
-                sp_energy[tokens[0]] = result_set[k]['energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                sp_energy_ref[tokens[0]] = ref_set[k]['energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
+                # sp_energy[tokens[0]] = result_set[k]['energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
+                # sp_energy_ref[tokens[0]] = ref_set[k]['energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
 
-                sp_static_energy[tokens[0]] = result_set[k]['static_energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                sp_static_energy_ref[tokens[0]] = ref_set[k]['static_energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
+                # sp_static_energy[tokens[0]] = result_set[k]['static_energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
+                # sp_static_energy_ref[tokens[0]] = ref_set[k]['static_energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
 
-                sp_dynamic_energy[tokens[0]] = result_set[k]['dynamic_energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                sp_dynamic_energy_ref[tokens[0]] = ref_set[k]['dynamic_energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
+                # sp_dynamic_energy[tokens[0]] = result_set[k]['dynamic_energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
+                # sp_dynamic_energy_ref[tokens[0]] = ref_set[k]['dynamic_energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
 
                 sp_l1d_bypass[tokens[0]] = result_set[k]['l1d_bypass'] * \
                     simpoints_data[tokens[0]][trace_id]
@@ -698,11 +691,6 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
                 sp_l1d_pref_cov[tokens[0]] = result_set[k]['l1d_prefetcher']['coverage'] * \
                     simpoints_data[tokens[0]][trace_id]
                 sp_l2c_pref_cov[tokens[0]] = result_set[k]['l2c_prefetcher']['coverage'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                
-                sp_l1d_pref_misses[tokens[0]] = result_set[k]['l1d_prefetcher']['misses'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                sp_l2c_pref_misses[tokens[0]] = result_set[k]['l2c_prefetcher']['misses'] * \
                     simpoints_data[tokens[0]][trace_id]
 
                 sp_l1d_pref_issued[tokens[0]] = result_set[k]['l1d_prefetcher']['pf_issued'] * \
@@ -897,20 +885,20 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
                 sp_irreg_pred_change_rate[tokens[0]] += result_set[k]['irregular_predictor']['change_rate'] * \
                     simpoints_data[tokens[0]][trace_id]
 
-                sp_energy[tokens[0]] += result_set[k]['energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                sp_energy_ref[tokens[0]] += ref_set[k]['energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
+                # sp_energy[tokens[0]] += result_set[k]['energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
+                # sp_energy_ref[tokens[0]] += ref_set[k]['energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
 
-                sp_static_energy[tokens[0]] += result_set[k]['static_energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                sp_static_energy_ref[tokens[0]] += ref_set[k]['static_energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
+                # sp_static_energy[tokens[0]] += result_set[k]['static_energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
+                # sp_static_energy_ref[tokens[0]] += ref_set[k]['static_energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
 
-                sp_dynamic_energy[tokens[0]] += result_set[k]['dynamic_energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                sp_dynamic_energy_ref[tokens[0]] += ref_set[k]['dynamic_energy'] * \
-                    simpoints_data[tokens[0]][trace_id]
+                # sp_dynamic_energy[tokens[0]] += result_set[k]['dynamic_energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
+                # sp_dynamic_energy_ref[tokens[0]] += ref_set[k]['dynamic_energy'] * \
+                #     simpoints_data[tokens[0]][trace_id]
 
                 sp_l1d_bypass[tokens[0]] += result_set[k]['l1d_bypass'] * \
                     simpoints_data[tokens[0]][trace_id]
@@ -977,12 +965,6 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
                     simpoints_data[tokens[0]][trace_id]
                 sp_l2c_pref_cov[tokens[0]] += result_set[k]['l2c_prefetcher']['coverage'] * \
                     simpoints_data[tokens[0]][trace_id]
-                
-                sp_l1d_pref_misses[tokens[0]] += result_set[k]['l1d_prefetcher']['misses'] * \
-                    simpoints_data[tokens[0]][trace_id]
-                sp_l2c_pref_misses[tokens[0]] += result_set[k]['l2c_prefetcher']['misses'] * \
-                    simpoints_data[tokens[0]][trace_id]
-
 
                 sp_l1d_pref_issued[tokens[0]] += result_set[k]['l1d_prefetcher']['pf_issued'] * \
                     simpoints_data[tokens[0]][trace_id]
@@ -1100,14 +1082,14 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
             sp_irreg_pred_mpki[k] /= weights_sum[k]
             sp_irreg_pred_change_rate[k] /= weights_sum[k]
 
-            sp_energy[k] /= weights_sum[k]
-            sp_energy_ref[k] /= weights_sum[k]
+            # sp_energy[k] /= weights_sum[k]
+            # sp_energy_ref[k] /= weights_sum[k]
 
-            sp_static_energy[k] /= weights_sum[k]
-            sp_static_energy_ref[k] /= weights_sum[k]
+            # sp_static_energy[k] /= weights_sum[k]
+            # sp_static_energy_ref[k] /= weights_sum[k]
 
-            sp_dynamic_energy[k] /= weights_sum[k]
-            sp_dynamic_energy_ref[k] /= weights_sum[k]
+            # sp_dynamic_energy[k] /= weights_sum[k]
+            # sp_dynamic_energy_ref[k] /= weights_sum[k]
 
             sp_l1d_bypass[k] /= weights_sum[k]
             sp_l1d_no_bypass[k] /= weights_sum[k]
@@ -1136,27 +1118,24 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
             sp_doa[k] /= weights_sum[k]
             sp_non_doa[k] /= weights_sum[k]
 
-            sp_l1d_pref_acc[k] /= weights_sum[k]
-            sp_l2c_pref_acc[k] /= weights_sum[k]
-            sp_llc_pref_acc[k] /= weights_sum[k]
+            # sp_l1d_pref_acc[k] /= weights_sum[k]
+            # sp_l2c_pref_acc[k] /= weights_sum[k]
+            # sp_llc_pref_acc[k] /= weights_sum[k]
 
-            sp_l1d_pref_cov[k] /= weights_sum[k]
-            sp_l2c_pref_cov[k] /= weights_sum[k]
+            # sp_l1d_pref_cov[k] /= weights_sum[k]
+            # sp_l2c_pref_cov[k] /= weights_sum[k]
 
-            sp_l1d_pref_misses[k] /= weights_sum[k]
-            sp_l2c_pref_misses[k] /= weights_sum[k]
+            # sp_l1d_pref_issued[k] /= weights_sum[k]
+            # sp_l2c_pref_issued[k] /= weights_sum[k]
+            # sp_llc_pref_issued[k] /= weights_sum[k]
 
-            sp_l1d_pref_issued[k] /= weights_sum[k]
-            sp_l2c_pref_issued[k] /= weights_sum[k]
-            sp_llc_pref_issued[k] /= weights_sum[k]
+            # sp_l1d_useful_pref_loc_l2c[k] /= weights_sum[k]
+            # sp_l1d_useful_pref_loc_llc[k] /= weights_sum[k]
+            # sp_l1d_useful_pref_loc_dram[k] /= weights_sum[k]
 
-            sp_l1d_useful_pref_loc_l2c[k] /= weights_sum[k]
-            sp_l1d_useful_pref_loc_llc[k] /= weights_sum[k]
-            sp_l1d_useful_pref_loc_dram[k] /= weights_sum[k]
-
-            sp_l1d_useless_pref_loc_l2c[k] /= weights_sum[k]
-            sp_l1d_useless_pref_loc_llc[k] /= weights_sum[k]
-            sp_l1d_useless_pref_loc_dram[k] /= weights_sum[k]
+            # sp_l1d_useless_pref_loc_l2c[k] /= weights_sum[k]
+            # sp_l1d_useless_pref_loc_llc[k] /= weights_sum[k]
+            # sp_l1d_useless_pref_loc_dram[k] /= weights_sum[k]
 
             # sp_hermes_pp_aggreement_rate[k] /= weights_sum[k]
 
@@ -1304,17 +1283,15 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
                 'front_end_miss_cost_reduction': -((sp_front_end_miss_cost[k] / sp_ref_front_end_miss_cost[k]) - 1.0),
 
                 # Energy-related metrics.
-                'static_energy': sp_static_energy[k],
-                'dynamic_energy': sp_dynamic_energy[k],
-                'energy': sp_energy[k],
-                'relative_energy': sp_energy[k] / sp_energy_ref[k],
+                # 'static_energy': sp_static_energy[k],
+                # 'dynamic_energy': sp_dynamic_energy[k],
+                # 'energy': sp_energy[k],
+                # 'relative_energy': sp_energy[k] / sp_energy_ref[k],
 
                 'l1d_prefetcher': {
                     'issued': sp_l1d_pref_issued[k],
                     'accuracy': sp_l1d_pref_acc[k],
                     'coverage': sp_l1d_pref_cov[k],
-
-                    'misses': sp_l1d_pref_misses[k],
 
                     'useful': {
                         'l2c': sp_l1d_useful_pref_loc_l2c[k],
@@ -1332,8 +1309,6 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
                     'issued': sp_l2c_pref_issued[k],
                     'accuracy': sp_l2c_pref_acc[k],
                     'coverage': sp_l2c_pref_cov[k],
-
-                    'misses': sp_l2c_pref_misses[k],
                 },
 
                 'llc_prefetcher': {
@@ -1349,7 +1324,7 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
                 'is_xsbench': re.match(r'^xs.[X]{1,2}L', k),
                 'is_qualcomm': re.match(r'(compute_fp|compute_int|srv|server)', k),
                 'is_gapbs': re.match(r'^(sssp|tc|bs|bfs|cc|pr)', k),
-            } 
+            }
 
         except Exception as e:
             print(f'exception: {k} {result_set.config} {e}')
@@ -1426,10 +1401,10 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
     elem_reg_doa = np.zeros(shape=len(simpoints_result_set))
     elem_reg_alive = np.zeros(shape=len(simpoints_result_set))
 
-    elem_static_energy = np.zeros(shape=len(simpoints_result_set))
-    elem_dynamic_energy = np.zeros(shape=len(simpoints_result_set))
-    elem_energy = np.zeros(shape=len(simpoints_result_set))
-    elem_relative_energy = np.zeros(shape=len(simpoints_result_set))
+    # elem_static_energy = np.zeros(shape=len(simpoints_result_set))
+    # elem_dynamic_energy = np.zeros(shape=len(simpoints_result_set))
+    # elem_energy = np.zeros(shape=len(simpoints_result_set))
+    # elem_relative_energy = np.zeros(shape=len(simpoints_result_set))
     elem_metadata_cache_miss_rate = np.zeros(shape=len(simpoints_result_set))
     elem_metadata_cache_mpki = np.zeros(shape=len(simpoints_result_set))
     elem_locmap_accuracy = np.zeros(shape=len(simpoints_result_set))
@@ -1460,9 +1435,6 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
 
     elem_l1d_pref_cov = np.zeros(shape=len(simpoints_result_set))
     elem_l2c_pref_cov = np.zeros(shape=len(simpoints_result_set))
-
-    elem_l1d_pref_misses = np.zeros(shape=len(simpoints_result_set))
-    elem_l2c_pref_misses = np.zeros(shape=len(simpoints_result_set))
 
     elem_l1d_pref_issued = np.zeros(shape=len(simpoints_result_set))
     elem_l2c_pref_issued = np.zeros(shape=len(simpoints_result_set))
@@ -1531,10 +1503,10 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
         elem_reg_doa[idx] = simpoints_result_set[key]['stlb']['reg_doa']
         elem_reg_alive[idx] = simpoints_result_set[key]['stlb']['reg_alive']
 
-        elem_static_energy[idx] = simpoints_result_set[key]['static_energy']
-        elem_dynamic_energy[idx] = simpoints_result_set[key]['dynamic_energy']
-        elem_energy[idx] = simpoints_result_set[key]['energy']
-        elem_relative_energy[idx] = simpoints_result_set[key]['relative_energy']
+        # elem_static_energy[idx] = simpoints_result_set[key]['static_energy']
+        # elem_dynamic_energy[idx] = simpoints_result_set[key]['dynamic_energy']
+        # elem_energy[idx] = simpoints_result_set[key]['energy']
+        # elem_relative_energy[idx] = simpoints_result_set[key]['relative_energy']
 
         elem_metadata_cache_miss_rate[idx] = simpoints_result_set[key]['metadata_cache']['miss_rate']
         elem_metadata_cache_mpki[idx] = simpoints_result_set[key]['metadata_cache']['mpki']
@@ -1567,9 +1539,6 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
 
         elem_l1d_pref_cov[idx] = simpoints_result_set[key]['l1d_prefetcher']['coverage']
         elem_l2c_pref_cov[idx] = simpoints_result_set[key]['l2c_prefetcher']['coverage']
-
-        elem_l1d_pref_misses[idx] = simpoints_result_set[key]['l1d_prefetcher']['misses']
-        elem_l2c_pref_misses[idx] = simpoints_result_set[key]['l2c_prefetcher']['misses']
 
         elem_l1d_pref_issued[idx] = simpoints_result_set[key]['l1d_prefetcher']['issued']
         elem_l2c_pref_issued[idx] = simpoints_result_set[key]['l2c_prefetcher']['issued']
@@ -1699,16 +1668,15 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
 
         'memory_access_pcs': np.average(elem_memory_access_pcs),
 
-        'static_energy': np.average(elem_static_energy),
-        'dynamic_energy': np.average(elem_dynamic_energy),
-        'energy': np.average(elem_energy),
-        'relative_energy': np.average(elem_relative_energy),
+        # 'static_energy': np.average(elem_static_energy),
+        # 'dynamic_energy': np.average(elem_dynamic_energy),
+        # 'energy': np.average(elem_energy),
+        # 'relative_energy': np.average(elem_relative_energy),
 
         'l1d_prefetcher': {
             'issued': np.average(elem_l1d_pref_issued),
             'accuracy': np.average(elem_l1d_pref_acc),
             'coverage': np.average(elem_l1d_pref_cov),
-            'misses': np.average(elem_l1d_pref_misses),
 
             'useful': {
                 'l2c': np.average(elem_l1d_useful_loc_l2c),
@@ -1726,8 +1694,6 @@ def apply_simpoint(result_set, ref_set, simpoints_data, use=lambda n, d: True):
             'issued': np.average(elem_l2c_pref_issued),
             'accuracy': np.average(elem_l2c_pref_acc),
             'coverage': np.average(elem_l2c_pref_cov),
-
-            'misses': np.average(elem_l2c_pref_misses),
         },
 
         'llc_prefetcher': {

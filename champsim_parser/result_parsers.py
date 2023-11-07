@@ -490,7 +490,6 @@ def distill_cache_parser(data_fd):
             'true_neg': 0,
 
             'miss_hit_l1d': 0,
-            'miss_hit_l2c': 0,
 
             'true_pos_pf': 0,
             'false_pos_pf': 0,
@@ -1154,34 +1153,32 @@ def distill_cache_parser(data_fd):
 
     offchip_pred_dict = cpi_result_struct['offchip_pred']
 
-    for line in data_fd.readlines():
-        tokens = line.split()
-        if len(tokens) == 0:
-            continue
+    # for line in data_fd.readlines():
+    #     tokens = line.split()
+    #     if len(tokens) == 0:
+    #         continue
 
-        if tokens[0] == 'perc_true_pos':
-            offchip_pred_dict['true_pos'] = int(tokens[1])
-        elif tokens[0] == 'perc_false_pos':
-            offchip_pred_dict['false_pos'] = int(tokens[1])
-        elif tokens[0] == 'perc_false_neg':
-            offchip_pred_dict['false_neg'] = int(tokens[1])
-        elif tokens[0] == 'perc_true_neg':
-            offchip_pred_dict['true_neg'] = int(tokens[1])
-        # From here we are considering the accuracy stats relating to the prefetch specific predictor.
-        elif tokens[0] == 'perc_true_pos_pf':
-            offchip_pred_dict['true_pos_pf'] = int(tokens[1])
-        elif tokens[0] == 'perc_false_pos_pf':
-            offchip_pred_dict['false_pos_pf'] = int(tokens[1])
-        elif tokens[0] == 'perc_false_neg_pf':
-            offchip_pred_dict['false_neg_pf'] = int(tokens[1])
-        elif tokens[0] == 'perc_true_neg_pf':
-            offchip_pred_dict['true_neg_pf'] = int(tokens[1])
-        elif tokens[0] == 'miss_hit_l1d':
-            offchip_pred_dict['miss_hit_l1d'] = int(tokens[1])
-        elif tokens[0] == 'miss_hit_l2c':
-            offchip_pred_dict['miss_hit_l2c'] = int(tokens[1])
+    #     if tokens[0] == 'perc_true_pos':
+    #         offchip_pred_dict['true_pos'] = int(tokens[1])
+    #     elif tokens[0] == 'perc_false_pos':
+    #         offchip_pred_dict['false_pos'] = int(tokens[1])
+    #     elif tokens[0] == 'perc_false_neg':
+    #         offchip_pred_dict['false_neg'] = int(tokens[1])
+    #     elif tokens[0] == 'perc_true_neg':
+    #         offchip_pred_dict['true_neg'] = int(tokens[1])
+    #     # From here we are considering the accuracy stats relating to the prefetch specific predictor.
+    #     elif tokens[0] == 'perc_true_pos_pf':
+    #         offchip_pred_dict['true_pos_pf'] = int(tokens[1])
+    #     elif tokens[0] == 'perc_false_pos_pf':
+    #         offchip_pred_dict['false_pos_pf'] = int(tokens[1])
+    #     elif tokens[0] == 'perc_false_neg_pf':
+    #         offchip_pred_dict['false_neg_pf'] = int(tokens[1])
+    #     elif tokens[0] == 'perc_true_neg_pf':
+    #         offchip_pred_dict['true_neg_pf'] = int(tokens[1])
+    #     elif tokens[0] == 'miss_hit_l1d':
+    #         offchip_pred_dict['miss_hit_l1d'] = int(tokens[1])
             
-            offchip_pred_dict = cpi_result_struct['l1d_offchip_pred']
+    #         offchip_pred_dict = cpi_result_struct['l1d_offchip_pred']
 
     # print(data_fd, offchip_pred_dict)
 
