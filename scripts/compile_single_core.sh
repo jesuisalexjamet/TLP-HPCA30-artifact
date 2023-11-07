@@ -35,4 +35,4 @@ cd ../../
 cp bin/prefetchers/* prefetchers/
 cp bin/replacements/* replacements/
 
-cp prefetchers/libl1d_ipcp.so prefetchers/libl1d_ipcp_iso.iso
+cp prefetchers/libl1d_ipcp.so prefetchers/libl1d_ipcp_iso.so

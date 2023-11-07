@@ -39,20 +39,18 @@ idx=0
 
 echo $TRACE_DIR
 
-for trace in ${TRACE_DIR}4*.xz; do
-    filename=$(basename -- $trace)
+for trace in ${TRACE_DIR}/4*.xz; do
+  filename=$(basename -- $trace)
 
-
-	TRACES_ARRAY[$idx]=$filename
-	idx=$((idx + 1))
+  TRACES_ARRAY[$idx]=$filename
+  idx=$((idx + 1))
 done
 
-for trace in ${TRACE_DIR}6*.xz; do
-    filename=$(basename -- $trace)
+for trace in ${TRACE_DIR}/6*.xz; do
+  filename=$(basename -- $trace)
 
-
-	TRACES_ARRAY[$idx]=$filename
-	idx=$((idx + 1))
+  TRACES_ARRAY[$idx]=$filename
+  idx=$((idx + 1))
 done
 unset idx
 
@@ -80,23 +78,23 @@ CONFIGS=(
 )
 
 BINARIES=(
-    "1_cores_cascade_lake_800mtps_legacy"
+  "1_cores_cascade_lake_800mtps_legacy"
 
-    "1_cores_cascade_lake_800mtps_legacy"
-    "1_cores_cascade_lake_800mtps_legacy"
-    "1_cores_cascade_lake_hermes_o_800mtps_legacy"
-    "1_cores_cascade_lake_hermes_o_800mtps_legacy"
-    "1_cores_cascade_lake_hermes_o_800mtps_legacy"
-    "1_cores_cascade_lake_tlp_800mtps_legacy"
-    "1_cores_cascade_lake_800mtps_legacy"
+  "1_cores_cascade_lake_800mtps_legacy"
+  "1_cores_cascade_lake_800mtps_legacy"
+  "1_cores_cascade_lake_hermes_o_800mtps_legacy"
+  "1_cores_cascade_lake_hermes_o_800mtps_legacy"
+  "1_cores_cascade_lake_hermes_o_800mtps_legacy"
+  "1_cores_cascade_lake_tlp_800mtps_legacy"
+  "1_cores_cascade_lake_800mtps_legacy"
 
-    "1_cores_cascade_lake_800mtps_legacy"
-    "1_cores_cascade_lake_800mtps_legacy"
-    "1_cores_cascade_lake_hermes_o_800mtps_legacy"
-    "1_cores_cascade_lake_hermes_o_800mtps_legacy"
-    "1_cores_cascade_lake_hermes_o_800mtps_legacy"
-    "1_cores_cascade_lake_tlp_800mtps_legacy"
-    "1_cores_cascade_lake_800mtps_legacy"
+  "1_cores_cascade_lake_800mtps_legacy"
+  "1_cores_cascade_lake_800mtps_legacy"
+  "1_cores_cascade_lake_hermes_o_800mtps_legacy"
+  "1_cores_cascade_lake_hermes_o_800mtps_legacy"
+  "1_cores_cascade_lake_hermes_o_800mtps_legacy"
+  "1_cores_cascade_lake_tlp_800mtps_legacy"
+  "1_cores_cascade_lake_800mtps_legacy"
 )
 
 echo ${CONFIGS[@]}
@@ -104,31 +102,31 @@ echo ${CONFIGS[@]}
 idx=0
 
 for config in ${CONFIGS[@]}; do
-    for trace in ${TRACES_ARRAY[@]}; do
-        JOB_NAME="${config}-${trace}"
-        OUTPUT_FILE="${OUTPUT_DIR}/${config}/${trace}.txt"
-        ERROR_FILE="${OUTPUT_DIR}/${config}/${trace}.err"
+  for trace in ${TRACES_ARRAY[@]}; do
+    JOB_NAME="${config}-${trace}"
+    OUTPUT_FILE="${OUTPUT_DIR}/${config}/${trace}.txt"
+    ERROR_FILE="${OUTPUT_DIR}/${config}/${trace}.err"
 
-	should_wait_ret_code="1"
-        sbatch_ret_code="1"
+    should_wait_ret_code="1"
+    sbatch_ret_code="1"
 
-        # Waiting for the queue to empty a bit.
-        while (($should_wait_ret_code != 0)); do
-            count=$(jobs_in_queue)
-            should_wait_ret_code=$(should_wait $count 10000)
-        done
-
-    	# Creating the output directory if doesn't exist yet.
-    	mkdir -p ${OUTPUT_DIR}/${config}
-
-        # Launching the job ensuring that it has been taken into account.
-        while (($sbatch_ret_code != 0)); do
-            sbatch --job-name=${JOB_NAME} --output=${OUTPUT_FILE} --error=${ERROR_FILE} --chdir=${WORKING_DIR} --requeue --mail-type=FAIL,TIME_LIMIT --mail-user=alexandre.jamet@bsc.es ${WORKING_DIR}/scripts/run_single_core.job config/${config}.json ${BINARIES[$idx]} ${trace}
-            sbatch_ret_code=$?
-        done
+    # Waiting for the queue to empty a bit.
+    while (($should_wait_ret_code != 0)); do
+      count=$(jobs_in_queue)
+      should_wait_ret_code=$(should_wait $count 10000)
     done
 
-    # Incrementing the index counter.
-    idx=$((idx + 1))
+    # Creating the output directory if doesn't exist yet.
+    mkdir -p ${OUTPUT_DIR}/${config}
+
+    # Launching the job ensuring that it has been taken into account.
+    while (($sbatch_ret_code != 0)); do
+      sbatch --job-name=${JOB_NAME} --output=${OUTPUT_FILE} --error=${ERROR_FILE} --chdir=${WORKING_DIR} --requeue --mail-type=FAIL,TIME_LIMIT --mail-user=alexandre.jamet@bsc.es ${WORKING_DIR}/scripts/run_single_core.job config/${config}.json ${BINARIES[$idx]} ${trace}
+      sbatch_ret_code=$?
+    done
+  done
+
+  # Incrementing the index counter.
+  idx=$((idx + 1))
 done
 unset idx
