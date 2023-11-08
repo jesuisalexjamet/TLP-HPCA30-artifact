@@ -21,13 +21,12 @@
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#preparing-traces">Preparing Traces</a></li>
-    <!-- <li><a href="#experimental-workflow">Experimental Workflow</a></li>
+    <li><a href="#experimental-workflow">Experimental Workflow</a></li>
       <ul>
         <li><a href="#launching-experiments">Launching Experiments</a></li>
         <li><a href="#rolling-up-statistics">Rolling up Statistics</a></li>
-        <li><a href="#running-mcpat">Running McPAT</a></li>
       </ul>
-    </li> -->
+    </li>
     <!-- <li><a href="#brief-code-walkthrough">Brief Code Walkthrough</a></li>
     <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
     <li><a href="#citation">Citation</a></li> -->
@@ -91,9 +90,48 @@ The CMake buildsystem for our infrasture accepts a handful of parameters that al
 
 ## Preparing Traces
 
-1. Volume 1:
-2. Volume 2:
-3. Volume 3:
+We provide the traces used for simulation in three volumes. The traces, in total, represent around 145GB of data. The following three Zenodo records allow to download all traces:
+1. Volume 1: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10083542.svg)](https://doi.org/10.5281/zenodo.10083542)
+2. Volume 2: ???
+3. Volume 3: ???
+
+Here are the steps to prepare the traces for the workflow.
+
+1. Download the traces from the Zenodo records above.
+2. Place the three volumes of the trace archive at the root of the artifact folder.
+3. Extract the traces using the following command in your favorite shell:
+```shell
+tar -xMf TLP-HPCA30-artifact-traces.VOLUME1.tar
+> n TLP-HPCA30-artifact-traces.VOLUME2.tar
+> n TLP-HPCA30-artifact-traces.VOLUME3.tar
+```
+
+When the extraction of the first volume is completed, the shell will request the name of the second volume. Provide it as follows `> n TLP-HPCA30-artifact-traces.VOLUME1.tar`. Repeat the operation until the three volumes are consumed.
+
+A new directory named `traces` should be available, containing all the traces.
+
+## Experimental Workflow
+
+Our experimental workflow consist of two stages: i) running the experiments, and 2) running python scripts through Jupyter notebooks.
+
+### Launching Experiments
+
+1. To run the experiments, start by setting the values of the different variables in the `scripts/run_single_core.sh`, `scripts/run_single_core_legacy.sh`, and `scripts/run_single_core.job`.
+
+2. Run the following commands to run the full set of experiment required for this workflow.
+
+```shell
+./scripts/run_single_core.sh
+./scripts/run_single_core_legacy.sh
+```
+
+> *N.B.*: The scripts running the experiments assume that one has access to a computing cluster using slurm.
+
+### Rolling up Statistics
+
+In this workflow, rolling-up statistics is very simple. In `notebooks` we provide a Jupyter notebook called `scripts/single_core.ipynb` that contains all the code necessary to run the analysis of the results and provide different figures.
+
+To use this notebook, one only needs to open it using Visual Studio Code and run it. In our original methodology, we use the Jupyter extension of Visual Studio Code to run the notebooks in the IDE.
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
