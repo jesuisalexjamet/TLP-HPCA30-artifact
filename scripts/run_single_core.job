@@ -10,7 +10,6 @@ GPFS_DIR="/scratch/nas/3/${SLURM_USERNAME}" # Where is the AE directory stored?
 WORKING_DIR="${GPFS_DIR}/TLP-HPCA30-artifact"
 
 TRACE_DIR="${GPFS_DIR}/traces/"
-OUTPUT_DIR="${WORKING_DIR}/results/single_core" # Provide an output directory.
 
 CONFIG=$1
 BINARY=$2
