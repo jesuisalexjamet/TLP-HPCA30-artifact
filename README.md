@@ -3,14 +3,15 @@
 </p>
 
 <p align="center">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/itisntalex/TLP-HPCA30-artifact" />
-<a href="https://github.com/itisntalex/TLP-HPCA30-artifact/releases">
-    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/itisntalex/TLP-HPCA30-artifact"></a>
-    <a href="https://github.com/itisntalex/TLP-HPCA30-artifact/blob/main/LICENSE">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jesuisalexjamet/TLP-HPCA30-artifact" />
+<a href="https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/releases">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/jesuisalexjamet/TLP-HPCA30-artifact"></a>
+    <a href="https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/blob/main/LICENSE">
         <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
     </a>
     <a href="https://twitter.com/intent/follow?screen_name=jesuisalexjamet">
     <img src="https://img.shields.io/twitter/follow/jesuisalexjamet" alt="Twitter Follow" /></a>
+    <a href="https://doi.org/10.5281/zenodo.10091755"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10091755.svg" alt="DOI"></a>
 </p>
 
 <details open="open">
@@ -70,8 +71,8 @@ The infrastructure has been tested with the following system configuration:
 1. To clone the GitHub repository use on the following command in your favorite bash interpreter.
 
   ```bash
-  git clone git@github.com:itisntalex/TLP-HPCA30-artifact.git
-  git clone https://github.com/itisntalex/TLP-HPCA30-artifact.git
+  git clone git@github.com:jesuisalexjamet/TLP-HPCA30-artifact.git
+  git clone https://github.com/jesuisalexjamet/TLP-HPCA30-artifact.git
   ```
 
 2. Build the simulation infrastructure using CMake. A collection of variable can be provided to customize the build.
