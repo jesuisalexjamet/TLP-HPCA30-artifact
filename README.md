@@ -17,7 +17,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#what-is-tlp">What is TLP?</a></li>
-    <!-- <li><a href="#about-the-framework">About the Framework</a></li> -->
+    <li><a href="#about-the-framework">About the Framework</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#preparing-traces">Preparing Traces</a></li>
@@ -49,6 +49,10 @@ The key idea behind TLP is to:
  4. Discard L1D prefetch request that are predicted to go off-chip.
 
 TLP has been accepted at the [2024 IEEE International Symposium on High-Performance Computer Architecture](https://hpca-conf.org/2024/).
+
+## About the Framework
+
+TLP is modleed in the [ChampSim Simulator](https://github.com/ChampSim/ChampSim). It is fully compatible with all publicly-available traces for ChampSim.
 
 ## Prerequisites
 
@@ -92,8 +96,8 @@ The CMake buildsystem for our infrasture accepts a handful of parameters that al
 
 We provide the traces used for simulation in three volumes. The traces, in total, represent around 145GB of data. The following three Zenodo records allow to download all traces:
 1. Volume 1: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10083542.svg)](https://doi.org/10.5281/zenodo.10083542)
-2. Volume 2: ???
-3. Volume 3: ???
+2. Volume 2: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10088347.svg)](https://doi.org/10.5281/zenodo.10088347)
+3. Volume 3: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10088525.svg)](https://doi.org/10.5281/zenodo.10088525)
 
 Here are the steps to prepare the traces for the workflow.
 
@@ -112,7 +116,7 @@ A new directory named `traces` should be available, containing all the traces.
 
 ## Experimental Workflow
 
-Our experimental workflow consist of two stages: i) running the experiments, and 2) running python scripts through Jupyter notebooks.
+Our experimental workflow consist of two stages: i) running the experiments, and ii) running python scripts through Jupyter notebooks.
 
 ### Launching Experiments
 
@@ -131,7 +135,15 @@ Our experimental workflow consist of two stages: i) running the experiments, and
 
 In this workflow, rolling-up statistics is very simple. In `notebooks` we provide a Jupyter notebook called `scripts/single_core.ipynb` that contains all the code necessary to run the analysis of the results and provide different figures.
 
-To use this notebook, one only needs to open it using Visual Studio Code and run it. In our original methodology, we use the Jupyter extension of Visual Studio Code to run the notebooks in the IDE.
+To use this notebook, one only needs to open it using Visual Studio Code and run it. In our original methodology, we use the Jupyter extension of Visual Studio Code to run the notebooks in the IDE. Installing the required Visual Studio Code extension can be done through the command line using the following commands:
+
+```shell
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-toolsai.jupyter-keymap
+code --install-extension ms-toolsai.jupyter-renderers
+code --install-extension ms-toolsai.vscode-jupyter-cell-tags
+code --install-extension ms-toolsai.vscode-jupyter-slideshow
+```
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
