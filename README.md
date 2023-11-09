@@ -110,7 +110,7 @@ tar -xMf TLP-HPCA30-artifact-traces.VOLUME1.tar
 > n TLP-HPCA30-artifact-traces.VOLUME3.tar
 ```
 
-When the extraction of the first volume is completed, the shell will request the name of the second volume. Provide it as follows `> n TLP-HPCA30-artifact-traces.VOLUME1.tar`. Repeat the operation until the three volumes are consumed.
+When the extraction of the first volume is completed, the shell will request the name of the second volume. Provide it as follows `> n TLP-HPCA30-artifact-traces.VOLUME2.tar`. Repeat the operation until the three volumes are consumed.
 
 A new directory named `traces` should be available, containing all the traces.
 
