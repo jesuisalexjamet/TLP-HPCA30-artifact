@@ -1,0 +1,8 @@
+{
+	"name": "l1d_ipcp_iso",
+	"cache_type": "l1d",
+	"ip_table_size": 2048,
+    "ip_index_bits": 10,
+    "ip_tag_bits": 6,
+    "ghb_size": 16
+}

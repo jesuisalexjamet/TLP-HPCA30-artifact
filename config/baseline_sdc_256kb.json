@@ -1,0 +1,22 @@
+{
+	"llc": {
+		"config": "config/caches/sectored_cache_llc.json"
+	},
+	"cores": [
+		{
+			"l1i": {
+				"config": "config/caches/sectored_cache_l1i.json"
+			},
+			"l1d": {
+				"config": "config/caches/sectored_cache_l1d.json"
+			},
+			"l2c": {
+				"config": "config/caches/sectored_cache_l2c_spp.json"
+			},
+			"sdc": {
+				"config": "config/caches/sectored_cache_sdc_256kb.json",
+				"enabled": true
+			}
+		}
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"name": "l1d_next_line",
+	"cache_type": "l1d",
+	"prefetch_degree": 3,
+	"ip_tracker_size": 64
+}

@@ -1,0 +1,4 @@
+{
+	"name": "l1i_lru",
+	"cache_type": "l1i"
+}
