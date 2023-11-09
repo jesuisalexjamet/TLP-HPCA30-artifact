@@ -129,6 +129,8 @@ Our experimental workflow consist of two stages: i) running the experiments, and
 ./scripts/run_single_core_legacy.sh
 ```
 
+Upon the execution of these simulations, the result files will be placed in the `results` directory.
+
 > *N.B.*: The scripts running the experiments assume that one has access to a computing cluster using slurm.
 
 ### Rolling up Statistics
