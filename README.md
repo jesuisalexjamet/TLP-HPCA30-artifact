@@ -4,15 +4,12 @@
 
 <p align="center">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jesuisalexjamet/TLP-HPCA30-artifact" />
-  <a href="https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/releases">
-      <img alt="GitHub release" src="https://img.shields.io/github/release/jesuisalexjamet/ TLP-HPCA30-artifact">
-  </a>
   <a href="https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/blob/main/LICENSE">
       <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
+  <a href="https://doi.org/10.5281/zenodo.10100305"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10100305.svg" alt="DOI"></a>
   <a href="https://twitter.com/intent/follow?screen_name=jesuisalexjamet">
   <img src="https://img.shields.io/twitter/follow/jesuisalexjamet" alt="Twitter Follow" /></a>
-  <a href="https://doi.org/10.5281/zenodo.10100305"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10100305.svg" alt="DOI"></a>
 </p>
 
 <details open="open">
