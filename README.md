@@ -4,14 +4,15 @@
 
 <p align="center">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jesuisalexjamet/TLP-HPCA30-artifact" />
-<a href="https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/releases">
-    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/jesuisalexjamet/TLP-HPCA30-artifact"></a>
-    <a href="https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/blob/main/LICENSE">
-        <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-    </a>
-    <a href="https://twitter.com/intent/follow?screen_name=jesuisalexjamet">
-    <img src="https://img.shields.io/twitter/follow/jesuisalexjamet" alt="Twitter Follow" /></a>
-    <a href="https://doi.org/10.5281/zenodo.10091755"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10091755.svg" alt="DOI"></a>
+  <a href="https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/releases">
+      <img alt="GitHub release" src="https://img.shields.io/github/release/jesuisalexjamet/ TLP-HPCA30-artifact">
+  </a>
+  <a href="https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/blob/main/LICENSE">
+      <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/intent/follow?screen_name=jesuisalexjamet">
+  <img src="https://img.shields.io/twitter/follow/jesuisalexjamet" alt="Twitter Follow" /></a>
+  <a href="https://doi.org/10.5281/zenodo.10100305"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10100305.svg" alt="DOI"></a>
 </p>
 
 <details open="open">
@@ -88,7 +89,7 @@ The CMake buildsystem for our infrasture accepts a handful of parameters that al
 - `CHAMPSIM_CPU_NUMBER_CORE`: Specifies the number of cores that will be simulated.
 - `CHAMPSIM_CPU_DRAM_IO_FREQUENCY`: Specifies the I/O frequency of modeled DRAM.
 - `LEGACY_TRACE`: Specifies whether or not to use the legacy ChampSim trace format.
-- `ENABLE_FSP`: Specifies wheter or not to use the FSP predictor (equivalent to Hermes).
+- `ENABLE_FSP`: Specifies wheter or not to use the FSP predictor (equivalent to TLP-HPCA30-artifact).
 - `ENABLE_DELAYED_FSP`: Specifies whether or not to use the Delayed FSP predictor.
 - `ENABLE_BIMODAL_FSP`: Specifies whether or not to use the Bimoal FSP predictor.
 - `ENABLE_SSP`: Specifies whether or not to use the SSP predictor.
