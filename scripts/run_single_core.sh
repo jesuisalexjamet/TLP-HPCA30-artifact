@@ -7,7 +7,7 @@ SLURM_USERNAME="ajamet" # Provide a SLURM username.
 GPFS_DIR="/scratch/nas/3/${SLURM_USERNAME}" # Where is the AE directory stored?
 WORKING_DIR="${GPFS_DIR}/TLP-HPCA30-artifact"
 
-TRACE_DIR="${GPFS_DIR}/traces/"
+TRACE_DIR="${WORKING_DIR}/traces/"
 OUTPUT_DIR="${WORKING_DIR}/results/single_core/100M/100M" # Provide an output directory.
 
 # Defining a useful functions that will allow us to know how many jobs are already in the queues.

@@ -26,9 +26,9 @@
         <li><a href="#rolling-up-statistics">Rolling up Statistics</a></li>
       </ul>
     </li>
-    <!-- <li><a href="#brief-code-walkthrough">Brief Code Walkthrough</a></li>
+    <!-- <li><a href="#brief-code-walkthrough">Brief Code Walkthrough</a></li> -->
     <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
-    <li><a href="#citation">Citation</a></li> -->
+    <li><a href="#citation">Citation</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
@@ -145,6 +145,17 @@ code --install-extension ms-toolsai.jupyter-renderers
 code --install-extension ms-toolsai.vscode-jupyter-cell-tags
 code --install-extension ms-toolsai.vscode-jupyter-slideshow
 ```
+
+## Frequently Asked Questions
+
+1. **How much time out should I allocate for each job?**
+
+We recommend allocating 12 hours to each jobs. This will allow you to safely run each job without risking a job to timeout before its completion.
+
+
+## Citation
+
+Not available.
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.

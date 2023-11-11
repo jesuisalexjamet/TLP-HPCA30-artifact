@@ -9,7 +9,7 @@ SLURM_USERNAME="ajamet"
 GPFS_DIR="/scratch/nas/3/${SLURM_USERNAME}" # Where is the AE directory stored?
 WORKING_DIR="${GPFS_DIR}/TLP-HPCA30-artifact"
 
-TRACE_DIR="${GPFS_DIR}/traces/"
+TRACE_DIR="${WORKING_DIR}/traces/"
 
 CONFIG=$1
 BINARY=$2
