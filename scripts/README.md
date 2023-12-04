@@ -7,6 +7,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#overview">Overview</a></li>
+    <li><a href="installing-dependencies">Installing Dependencies</a></li>
     <li><a href="#compiling-binaries">Compiling Binaries</a></li>
     <li><a href="#running-single-core-jobs">Running Single-Core Jobs</a></li>
   </ol>
@@ -14,7 +15,14 @@
 
 ## Overview
 
-This file provides documentation of some of scripts present in this directory. Specifically, we discuss the `run_single_core.sh`, `run_single_core_legacy.sh`, and `compile_single_core.sh` scripts.
+This file provides documentation of some of scripts present in this directory. Specifically, we discuss the `install_dependencies.sh`, `run_single_core.sh`, `run_single_core_legacy.sh`, and `compile_single_core.sh` scripts.
+
+## Installing Dependencies
+
+The `install_dependencies.sh` script automated the installation of dependencies required to properly utilize this artifact. Notably, it installs:
+
+ - `libboost-all-dev` package that contains all development libraries for the Boost library.
+ - The Visual Studio Code IDE.
 
 ## Compiling Binaries
 

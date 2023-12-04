@@ -63,6 +63,8 @@ The infrastructure has been tested with the following system configuration:
 4. VSCode 1.84
 5. VSCode Jupyter Extension v2023.10
 6. Python 3.9.10
+7. IPython
+8. `libboost-all-dev` on Ubuntu systems
 
 ## Instalation
 
@@ -73,7 +75,21 @@ The infrastructure has been tested with the following system configuration:
   git clone https://github.com/jesuisalexjamet/TLP-HPCA30-artifact.git
   ```
 
-2. Build the simulation infrastructure using CMake. A collection of variable can be provided to customize the build.
+Alternatively, one can use the `scripts/install_dependencies.sh` as follows:
+
+```bash
+./scripts/install_dependencies.sh
+```
+
+2. Intall necessary prerequisites (These commands install both the Boost libraries, the Visual Studio Code IDE, and IPython).
+
+```bash
+sudo apt install libboost-all-dev
+sudo snap install --classic code
+sudo pip3 install ipython
+```
+
+3. Build the simulation infrastructure using CMake. A collection of variable can be provided to customize the build.
 
 ```bash
 cd build
@@ -144,6 +160,12 @@ code --install-extension ms-toolsai.jupyter-keymap
 code --install-extension ms-toolsai.jupyter-renderers
 code --install-extension ms-toolsai.vscode-jupyter-cell-tags
 code --install-extension ms-toolsai.vscode-jupyter-slideshow
+```
+
+Alternatively, could use the plain IPython script provided in the `notebooks` directory. To do so, simply run the following command in your terminal from the root directory of the artifact:
+
+```shell
+ipython ./notebooks/single_core.py
 ```
 
 ## Frequently Asked Questions
