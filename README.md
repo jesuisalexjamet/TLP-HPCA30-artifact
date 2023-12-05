@@ -22,6 +22,7 @@
     <li><a href="#preparing-traces">Preparing Traces</a></li>
     <li><a href="#experimental-workflow">Experimental Workflow</a></li>
       <ul>
+        <li><a href="#installing-slurm-for-bare-metal-clusters">Installing SLURM for bare-metal Clusters</a></li>
         <li><a href="#launching-experiments">Launching Experiments</a></li>
         <li><a href="#rolling-up-statistics">Rolling up Statistics</a></li>
       </ul>
@@ -132,6 +133,10 @@ A new directory named `traces` should be available, containing all the traces.
 ## Experimental Workflow
 
 Our experimental workflow consist of two stages: i) running the experiments, and ii) running python scripts through Jupyter notebooks.
+
+### Installing SLURM for bare-metal Clusters
+
+If one needs or wishes to use a bare-metal cluster to run the simulations required for this artifact, instructions for building and installing SLURM can be found [here](https://slurm.schedmd.com/quickstart_admin.html#build_install).
 
 ### Launching Experiments
 
