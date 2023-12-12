@@ -121,7 +121,7 @@ for config in ${CONFIGS[@]}; do
 
     # Launching the job ensuring that it has been taken into account.
     while (($sbatch_ret_code != 0)); do
-      sbatch --job-name=${JOB_NAME} --output=${OUTPUT_FILE} --error=${ERROR_FILE} --chdir=${WORKING_DIR} --requeue --mail-type=FAIL,TIME_LIMIT --mail-user=alexandre.jamet@bsc.es ${WORKING_DIR}/scripts/run_single_core.job config/${config}.json ${BINARIES[$idx]} ${trace}
+      sbatch --job-name=${JOB_NAME} --output=${OUTPUT_FILE} --error=${ERROR_FILE} --chdir=${WORKING_DIR} --requeue ${WORKING_DIR}/scripts/run_single_core.job config/${config}.json ${BINARIES[$idx]} ${trace}
       sbatch_ret_code=$?
     done
   done
