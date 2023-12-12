@@ -66,6 +66,7 @@ The infrastructure has been tested with the following system configuration:
 6. Python 3.9.10
 7. IPython
 8. `libboost-all-dev` on Ubuntu systems
+9. Various Tex related packages.
 
 ## Instalation
 
@@ -88,6 +89,7 @@ Alternatively, one can use the `scripts/install_dependencies.sh` as follows:
 sudo apt install libboost-all-dev
 sudo snap install --classic code
 sudo pip3 install ipython
+sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 ```
 
 3. Build the simulation infrastructure using CMake. A collection of variable can be provided to customize the build.
