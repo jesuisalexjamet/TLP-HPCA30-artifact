@@ -1,0 +1,62 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: TLP-HPCA30-Artifact
+message: >-
+  Elevate our collective impact! If you find our GitHub
+  repository valuable for your research, kindly cite it in
+  your work to foster collaboration and acknowledge
+  contributions.
+type: software
+authors:
+  - given-names: Alexandre Valentin
+    family-names: Jamet
+    email: alexandre.jamet@bsc.es
+    affiliation: >-
+      Universitat Politecnica de Catalunya / Barcelona
+      Supercomputing Center
+    orcid: 'https://orcid.org/0000-0001-6119-0213'
+  - given-names: Georgios
+    family-names: Vavouliotis
+    affiliation: Huawei Zurich Research Center
+    email: georgios.vavouliotis2@huawei.com
+    orcid: 'https://orcid.org/0000-0002-5416-6634'
+  - given-names: Daniel A.
+    family-names: Jiménez
+    email: djimenez@acm.org
+    affiliation: Texas A&M University
+    orcid: 'https://orcid.org/0000-0001-5658-4883'
+  - given-names: Lluc
+    family-names: Alvarez
+    email: lluc.alvarez@bsc.es
+    affiliation: >-
+      Universitat Politecnica de Catalunya / Barcelona
+      Supercomputing Center
+    orcid: 'https://orcid.org/0000-0003-0506-8867'
+  - given-names: Marc
+    family-names: Casas
+    email: marc.casas@bsc.es
+    affiliation: >-
+      Universitat Politecnica de Catalunya / Barcelona
+      Supercomputing Center
+    orcid: 'https://orcid.org/0000-0003-4564-2093'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.10100304
+    description: HPCA'30 artifact.
+repository-code: 'https://github.com/jesuisalexjamet/TLP-HPCA30-artifact'
+repository-artifact: 'https://github.com/jesuisalexjamet/TLP-HPCA30-artifact'
+abstract: >-
+  The Two Level Perceptron (TLP) predictor is a neural
+  mechanism that effectively combines predicting whether an
+  access will be off-chip with adaptive prefetch filtering
+  at the first-level data cache (L1D).
+keywords:
+  - computer architecture
+  - data prefetchers
+  - hardware prefetching
+  - ipcp
+  - berti
+  - hermes
+license: MIT

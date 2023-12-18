@@ -32,7 +32,7 @@
     <li><a href="#citation">Citation</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -140,6 +140,8 @@ Our experimental workflow consist of two stages: i) running the experiments, and
 
 If one needs or wishes to use a bare-metal cluster to run the simulations required for this artifact, instructions for building and installing SLURM can be found [here](https://slurm.schedmd.com/quickstart_admin.html#build_install).
 
+> *N.B.*: Please note that this artifact **requires** SLURM to be available as the computational power required to run all these experiments is very high (*i.e.*, running on an academic cluster, the experiments required to obtain the single-core results would take up to 12 hours to complete).
+
 ### Launching Experiments
 
 1. To run the experiments, start by setting the values of the different variables in the `scripts/run_single_core.sh`, `scripts/run_single_core_legacy.sh`, and `scripts/run_single_core.job`.
@@ -190,6 +192,12 @@ Not available.
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
-Alexandre Valentin Jamet - alexandre.jamet@bsc.es / alexandrev.jamet@gmail.com
+ - [Alexandre Valentin Jamet](https://dblp.org/pid/279/2596.html) (Universitat Politecnica de Catalunya / Barcelona Supercomputing Center) - alexandre.jamet@bsc.es / alexandrev.jamet@gmail.com
+ - [Georgios Vavouliotis](https://dblp.org/pid/298/8514.html) (Huawei Zurich Research Center) - georgios.vavouliotis2@huawei.com
+ - [Daniel A. Jiménez](https://dblp.org/pid/96/2151.html) (Texas A&M University) - djimenez@acm.org
+ - [Lluc Alvarez](https://dblp.org/pid/06/2988.html) (Universitat Politecnica de Catalunya / Barcelona Supercomputing Center) - lluc.alvarez@bsc.es
+ - [Marc Casas](https://dblp.org/pid/68/6352.html) (Universitat Politecnica de Catalunya / Barcelona Supercomputing Center) - marc.casas@bsc.es
 
-<!-- ## Acknowledgments -->
+## Acknowledgments
+
+The authors are grateful to the anonymous MICRO 2023 reviewers for their valuable comments and constructive feedback that significantly improved the quality of the paper. This work is supported by the National Science Foundation through grant CCF-1912617 and generous gifts from Intel. Marc Casas has been partially supported by the Grant RYC-2017-23269 funded by MCIN/AEI/10.13039/501100011033 and by ESF Investing in your future. This research was supported by grant PID2019-107255GB-C21 funded by MCIN/AEI/ 10.13039/501100011033. Els autors agraeixen el suport del Departament de Recerca i Universitats de la Generalitat de Catalunya al Grup de Recerca "Performance understanding, analysis, and simulation/emulation of novel architectures" (Codi: 2021 SGR 00865).
