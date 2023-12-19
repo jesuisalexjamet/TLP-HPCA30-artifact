@@ -186,7 +186,18 @@ We recommend allocating 12 hours to each jobs. This will allow you to safely run
 
 ## Citation
 
-Not available.
+If you want to cite this work, please cite the following paper:
+> Not yet available.
+
+If you use this repository, please cite it using the following:
+```bibtex
+@software{Jamet_TLP-HPCA30-Artifact,
+author = {Jamet, Alexandre Valentin and Vavouliotis, Georgios and Jiménez, Daniel A. and Alvarez, Lluc and Casas, Marc},
+license = {MIT},
+title = {{TLP-HPCA30-Artifact}},
+url = {https://github.com/jesuisalexjamet/TLP-HPCA30-artifact}
+}
+```
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
