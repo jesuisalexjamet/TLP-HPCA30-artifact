@@ -144,7 +144,7 @@ If one needs or wishes to use a bare-metal cluster to run the simulations requir
 
 ### Launching Experiments
 
-1. To run the experiments, start by setting the values of the different variables in the `scripts/run_single_core.sh`, `scripts/run_single_core_legacy.sh`, and `scripts/run_single_core.job`.
+1. To run the experiments, start by setting the values of the different variables (as mentionned here [here](https://github.com/jesuisalexjamet/TLP-HPCA30-artifact/tree/main/scripts#running-single-core-jobs)) in the `scripts/run_single_core.sh`, `scripts/run_single_core_legacy.sh`, and `scripts/run_single_core.job`.
 
 2. Run the following commands to run the full set of experiment required for this workflow.
 
@@ -179,14 +179,44 @@ ipython ./notebooks/single_core.py
 
 ## Frequently Asked Questions
 
-1. **How much time out should I allocate for each job?**
+1. **The workflow does not work when I execute the [scripts/run_single_core.sh](scripts/run_single_core.sh)/[scripts/run_single_core_legacy.sh](scripts/run_single_core_legacy.sh). Why is that?**
+
+There is a chance you might have forgotten to set the different variables. Please refer to (this document)[scripts/README.md] to
+
+2. **How much time out should I allocate for each job?**
 
 We recommend allocating 12 hours to each jobs. This will allow you to safely run each job without risking a job to timeout before its completion.
 
 
 ## Citation
 
-Not available.
+If you want to cite this work, please cite the following paper:
+```bibtex
+@INPROCEEDINGS{10476485,
+author={Jamet, Alexandre Valentin and Vavouliotis, Georgios and Jiménez, Daniel A. and Alvarez, Lluc and Casas, Marc},
+booktitle={2024 IEEE International Symposium on High-Performance Computer Architecture (HPCA)}, 
+title={A Two Level Neural Approach Combining Off-Chip Prediction with Adaptive Prefetch Filtering}, 
+year={2024},
+volume={},
+number={},
+pages={528-542},
+abstract={To alleviate the performance and energy overheads of contemporary applications with large data footprints, we propose the Two Level Perceptron (TLP) predictor, a neural mechanism that effectively combines predicting whether an access will be off-chip with adaptive prefetch filtering at the first-level data cache (L1D). TLP is composed of two connected microarchitectural perceptron predictors, named First Level Predictor (FLP) and Second Level Predictor (SLP). FLP performs accurate off-chip prediction by using several program features based on virtual addresses and a novel selective delay component. The novelty of SLP relies on leveraging off-chip prediction to drive L1D prefetch filtering by using physical addresses and the FLP prediction as features. TLP constitutes the first hardware proposal targeting both off-chip prediction and prefetch filtering using a multilevel perceptron hardware approach. TLP only requires 7KB of storage. To demonstrate the benefits of TLP we compare its performance with state-of-the-art approaches using off-chip prediction and prefetch filtering on a wide range of single-core and multi-core workloads. Our experiments show that TLP reduces the average DRAM transactions by 30.7% and 17.7%, as compared to a baseline using state-of-the-art cache prefetchers but no off-chip prediction mechanism, across the single-core and multi-core workloads, respectively, while recent work significantly increases DRAM transactions. As a result, TLP achieves geometric mean performance speedups of 6.2% and 11.8% across single-core and multi-core workloads, respectively. In addition, our evaluation demonstrates that TLP is effective independently of the L1D prefetching logic.},
+keywords={Pollution;Microarchitecture;Filtering;Prefetching;Memory management;Random access memory;Bandwidth;Hardware Prefetching;Off-Chip Prediction;Prefetch Filtering;micro-architecture;Graph-Processing},
+doi={10.1109/HPCA57654.2024.00046},
+ISSN={2378-203X},
+month={March},
+}
+```
+
+If you use this repository, please cite it using the following:
+```bibtex
+@software{Jamet_TLP-HPCA30-Artifact,
+author = {Jamet, Alexandre Valentin and Vavouliotis, Georgios and Jiménez, Daniel A. and Alvarez, Lluc and Casas, Marc},
+license = {MIT},
+title = {{TLP-HPCA30-Artifact}},
+url = {https://github.com/jesuisalexjamet/TLP-HPCA30-artifact}
+}
+```
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
