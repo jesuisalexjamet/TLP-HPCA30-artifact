@@ -8,8 +8,9 @@
       <img alt="GitHub" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <a href="https://doi.org/10.5281/zenodo.10100304"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10100304.svg" alt="DOI"></a>
-  <a href="https://twitter.com/intent/follow?screen_name=jesuisalexjamet">
-  <img src="https://img.shields.io/twitter/follow/jesuisalexjamet" alt="Twitter Follow" /></a>
+  <a href="https://register.epo.org/application?number=EP23383348">
+      <img alt="Patent" src="https://img.shields.io/badge/Patent-EP4575807A1-blue.svg" />
+  </a>
 </p>
 
 <details open="open">
@@ -30,6 +31,8 @@
     <!-- <li><a href="#brief-code-walkthrough">Brief Code Walkthrough</a></li> -->
     <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
     <li><a href="#citation">Citation</a></li>
+    <li><a href="#patent">Patent</a></li>
+    <li><a href="#presentations">Presentations</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -47,8 +50,6 @@ The key idea behind TLP is to:
  2. Accurately predict which L1D prefetch request might go off-chip;
  3. Speculatively start fetching the data required by the predicted off-chip loads directly from the main memory, when confidence is high enough, in parallel to the cache accesses. Conversely, when confidence is not high enough, the speculative fetch from main memory is delayed upon an L1D miss.
  4. Discard L1D prefetch request that are predicted to go off-chip.
-
-TLP has been accepted at the [2024 IEEE International Symposium on High-Performance Computer Architecture](https://hpca-conf.org/2024/).
 
 ## About the Framework
 
@@ -217,6 +218,34 @@ title = {{TLP-HPCA30-Artifact}},
 url = {https://github.com/jesuisalexjamet/TLP-HPCA30-artifact}
 }
 ```
+
+## Patent
+
+This work is protected under the following patent:
+
+> **Perceptron-Based Off-Chip Predictor**  
+> *European Patent Application*: EP 4 575 807 A1  
+> *Application number*: 23383348.2  
+> *Filing date*: 21 December 2023  
+> *Publication date*: 25 June 2025 (Bulletin 2025/26)  
+> *Applicant*: Barcelona Supercomputing Center – Centro Nacional de Supercomputación (BSC)  
+> *Inventors*: Alexandre Valentin Jamet, Georgios Vavouliotis, Marc Casas  
+>
+> The patent covers the first-level (FLP) and two-level (TLP) perceptron-based off-chip predictors described in this repository, which selectively delay off-chip predictions using dual thresholds to improve DRAM transaction efficiency.
+
+For more details, see the full patent at the [European Patent Office (EP 4575807 A1)](https://register.epo.org/application?number=EP23383348).
+
+## Presentations
+
+This work has been presented at the following venues:
+
+- **[2024 IEEE International Symposium on High-Performance Computer Architecture (HPCA 30)](https://hpca-conf.org/)**  
+  *Edinburgh, United Kingdom — March 2024*  
+  DOI: [10.1109/HPCA57654.2024.00046](https://doi.org/10.1109/HPCA57654.2024.00046)
+
+- **[APPT 2025 Young Scholar Forum (YSF)](https://www.appt-conference.com/)**  
+  *Athens, Greece — September 2025*  
+  The presentation highlighted the practical implications of perceptron-based off-chip prediction mechanisms and their integration into adaptive prefetch filtering systems.
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
