@@ -245,7 +245,7 @@ This work has been presented at the following venues:
   - DOI: [10.1109/HPCA57654.2024.00046](https://doi.org/10.1109/HPCA57654.2024.00046).
 
 - **[APPT 2025 Young Scholar Forum (YSF)](https://www.appt-conference.com/)**  
-  *Athens, Greece — September 2025*  
+  *Athens, Greece — July 2025*  
   - The presentation highlighted the practical implications of perceptron-based off-chip prediction mechanisms and their integration into adaptive prefetch filtering systems.
   - Online Dossier: [https://doi.org/10.5281/zenodo.17511617](zenodo.17511617).
 
