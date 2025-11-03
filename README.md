@@ -204,6 +204,7 @@ pages={528-542},
 abstract={To alleviate the performance and energy overheads of contemporary applications with large data footprints, we propose the Two Level Perceptron (TLP) predictor, a neural mechanism that effectively combines predicting whether an access will be off-chip with adaptive prefetch filtering at the first-level data cache (L1D). TLP is composed of two connected microarchitectural perceptron predictors, named First Level Predictor (FLP) and Second Level Predictor (SLP). FLP performs accurate off-chip prediction by using several program features based on virtual addresses and a novel selective delay component. The novelty of SLP relies on leveraging off-chip prediction to drive L1D prefetch filtering by using physical addresses and the FLP prediction as features. TLP constitutes the first hardware proposal targeting both off-chip prediction and prefetch filtering using a multilevel perceptron hardware approach. TLP only requires 7KB of storage. To demonstrate the benefits of TLP we compare its performance with state-of-the-art approaches using off-chip prediction and prefetch filtering on a wide range of single-core and multi-core workloads. Our experiments show that TLP reduces the average DRAM transactions by 30.7% and 17.7%, as compared to a baseline using state-of-the-art cache prefetchers but no off-chip prediction mechanism, across the single-core and multi-core workloads, respectively, while recent work significantly increases DRAM transactions. As a result, TLP achieves geometric mean performance speedups of 6.2% and 11.8% across single-core and multi-core workloads, respectively. In addition, our evaluation demonstrates that TLP is effective independently of the L1D prefetching logic.},
 keywords={Pollution;Microarchitecture;Filtering;Prefetching;Memory management;Random access memory;Bandwidth;Hardware Prefetching;Off-Chip Prediction;Prefetch Filtering;micro-architecture;Graph-Processing},
 doi={10.1109/HPCA57654.2024.00046},
+eprint={arXiv:2403.15181},
 ISSN={2378-203X},
 month={March},
 }
@@ -241,11 +242,12 @@ This work has been presented at the following venues:
 
 - **[2024 IEEE International Symposium on High-Performance Computer Architecture (HPCA 30)](https://hpca-conf.org/)**  
   *Edinburgh, United Kingdom — March 2024*  
-  DOI: [10.1109/HPCA57654.2024.00046](https://doi.org/10.1109/HPCA57654.2024.00046)
+  - DOI: [10.1109/HPCA57654.2024.00046](https://doi.org/10.1109/HPCA57654.2024.00046).
 
 - **[APPT 2025 Young Scholar Forum (YSF)](https://www.appt-conference.com/)**  
   *Athens, Greece — September 2025*  
-  The presentation highlighted the practical implications of perceptron-based off-chip prediction mechanisms and their integration into adaptive prefetch filtering systems.
+  - The presentation highlighted the practical implications of perceptron-based off-chip prediction mechanisms and their integration into adaptive prefetch filtering systems.
+  - Online Dossier: [https://doi.org/10.5281/zenodo.17511617](zenodo.17511617).
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
